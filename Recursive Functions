@@ -1,5 +1,4 @@
 #This is a program to calculate Factorial of a number
-
 def factorial(n):
     if n == 1:
         return 1
@@ -7,21 +6,26 @@ def factorial(n):
         return n * factorial(n-1)
 
 n=8
-#----------------------------Main program
 
-#Call a function to calculate the factorial
+#Call a function to cary out the factorial recursive function
 print("The factorial of 8 is",factorial(n),".")
 
+
+
+#New recursive function program to display balls being taken to a box until its full
 def factorialcarrying_balls(box):
-#This print shows the value after 3 is added to the box every time
+#This print shows the value after 3 balls is added to the box every trip
     print(box)
     if box >= 25:
         return print("Capacity is full")
     else:
         return factorialcarrying_balls(box + 5)
+
 #How many balls can be carried to the box at a time
 carrying_capacity = 5
+
 #how many balls are in the box intitially
 box = 3
+
 #calling the function to carry out the recursive function for the ball function
 factorialcarrying_balls(box)
