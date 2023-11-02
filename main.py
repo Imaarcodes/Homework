@@ -1,38 +1,26 @@
-import matplotlib.pyplot as plt
-
-# initializing the data
-x = [11, 33, 45, 67]
-y = [20, 30, 40, 50]
-
-# plotting the data
-plt.plot(x, y)
-
-# Adding the title
-plt.title("Simple Plot")
-
-# Adding the labels
-plt.ylabel("Price of Pizzas")
-plt.xlabel("Amount of Pizzas")
-
-
 
 import matplotlib.pyplot as plt
-# data to display on plots
-x = [4, 2, 1]
-y = [3, 2, 1]
-z = [5, 6, 7]
-
-# Creating figure object
-plt.figure()
-
-# adding first subplot
-plt.subplot(121)
-plt.plot(x, y)
-
-# adding second subplot
-plt.subplot(122)
-plt.plot(z, y)
+import csv
+import numpy as np
+t=np.arange(0,5,0.2)
 
 
+Names = []
+Values = []
+
+with open('Icecreamscoop_three.csv','r') as csvfile:
+	lines = csv.reader(csvfile, delimiter=',')
+	for row in lines:
+		Names.append(row[0])
+		Values.append(int(row[1]))
+
+
+plt.scatter(Names, Values, color = 'g',s = 100)
+plt.xticks(rotation = 25)
+plt.xlabel('Number of Scoops')
+plt.ylabel('Number of People')
+plt.title('Consumption Per Number of Scoops', fontsize = 20)
 
 plt.show()
+
+
